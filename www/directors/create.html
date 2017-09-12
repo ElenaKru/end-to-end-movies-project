@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <h2> Create Lead </h2>
+
+    <div class="form-group">
+        <label class="input-description">NAME:</label>
+        <input type="text" class="form-control" name="leadName" placeholder="New Lead name">
+    </div>
+    <div class="form-group">
+        <label  class="input-description">PHONE:</label>
+        <input type="number" class="form-control" name="leadPhone" placeholder="New Lead phone">
+    </div>
+    <div class="form-group">
+        <label  class="input-description">PRODUCT:</label>
+        <select id="Product" class="form-control" name="product" placeholder="Select Product" ></select>
+    </div>
+    <input  type="hidden" name="action" value="CreateLead">
+    <div class="form-group">
+        <br><br>
+        <button class="btnAdd btn btn-primary" name="action" value="AddLead">Create Lead</button>
+    </div>
+    <div id="result"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+    <script src="../js/leads.js"></script>
+</body>
+</body>
+</html>

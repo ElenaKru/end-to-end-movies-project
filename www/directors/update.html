@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body onload="initForm()">
+    <h2> Update Lead </h2>
+
+    <div class="form-group">
+        <label class="input-description">ID:</label>
+       <!-- <input type="number" class="form-control" name="leadID" placeholder="ID"> -->
+        <select id="leadID" class="form-control" name="leadID"  placeholder="Select Product" >
+
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="input-description">NAME:</label>
+        <input type="text" class="form-control" id="leadName" name="leadName" placeholder="New Lead name">
+    </div>
+    <div class="form-group">
+        <label  class="input-description">PHONE:</label>
+        <input type="number" class="form-control" id="leadPhone" name="leadPhone" placeholder="New Lead phone">
+    </div>
+    <div class="form-group">
+        <label  class="input-description">PRODUCT:</label>
+        <select class="form-control" id="productID" name="product"  placeholder="Select Product" ></select>
+    </div>
+    <input  type="hidden" name="action" value="CreateLead" >
+    <div class="form-group">
+        <br><br>
+        <button class="btnUpdate btn btn-primary" name="action" value="UpdateLead" onclick="updateLead();">Update Lead</button>
+    </div>
+    <div id="result"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
+    <script src="../js/leads.js"></script>
+</body>
+</html>

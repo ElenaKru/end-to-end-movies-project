@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <input>
+        <button>Get customer</button>
+        <div>
+        </div>
+        <script src=customer.js></script>
+        <script>
+            document.getElementsByTagName('button')[0].addEventListener('click', function() {
+                var res = m.getCustomer(document.getElementsByTagName('input')[0].value, function(res) {
+                    res = JSON.parse(res);
+                    console.log(res);
+                    document.getElementsByTagName('div')[0].innerHTML = 
+                       "<span>" + res.id + "</span><br><span>" + res.name + "</span>";
+                });
+            });
+            
+            var m = customersModule();
+
+           
+
+           
+        </script>
+    </body>
+</html>
