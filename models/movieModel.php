@@ -10,7 +10,7 @@
             // parent::__construct('Customer');
             
         //    $this->tableName = 'Customer';
-            $this->id = $params["id"];
+//            $this->id = $params["id"];
             $this->name = $params["name"];
             $this->d_id = $params["d_id"];
             

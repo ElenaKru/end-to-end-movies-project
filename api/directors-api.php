@@ -6,7 +6,7 @@ class DirectorApi extends Api{
 
     function Create($params) {
         $c = new DirectorController;
-        $c->CreateDirector($params);
+        return $c->CreateDirector($params);
     }
 
     function Read($params) {

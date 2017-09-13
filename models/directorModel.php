@@ -9,7 +9,7 @@ class DirectorModel extends Model implements JsonSerializable {
         // parent::__construct('Customer');
 
     //    $this->tableName = 'Customer';
-        $this->id = $params["id"];
+//        $this->id = $params["id"];
         $this->name = $params["name"];
 
     }

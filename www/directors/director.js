@@ -3,9 +3,21 @@ var directorsModule = function() {
     return {
         createDirector: function() {
 
+            var data = {
+                name: $('#directorName').val(),
+                ctrl: directorApiMethod
+            }
+            jQuery.ajax({
+                url: '../../api/api.php' ,
+                data: data,
+                type: 'POST',
+                success: function(result) {
+                    alert('Director was added successfully!');
+                    //   callback(result);
+                }
 
-            jQuery.post(directorApiUrl).always(function(data) {
-                console.log(data);
+            // jQuery.post(directorApiUrl).always(function(data) {
+            //     console.log(data);
             });
         },
         getDirector: function(id, callback) {

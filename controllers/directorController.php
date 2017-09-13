@@ -9,9 +9,9 @@ class DirectorController extends Controller {
         // $this->db = new BL();
     }
 
-    function CreateDirector($param) {
-        $c = new DirectorModel($param);
-        return "hi";
+    function CreateDirector($params) {
+        $d = new DirectorModel($params);
+        return BL::CreateEntity(directorModel::tableName, $d->jsonSerialize());
         //$this->db->CreateEntity($c);
 
     }
