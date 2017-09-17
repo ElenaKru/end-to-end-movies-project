@@ -6,18 +6,56 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body onload="">
-    <h2> Delete Lead </h2>
+    <h2> Delete Movie </h2>
 
     <div class="form-group">
         <label class="input-description">ID:</label>
-        <input type="number" class="form-control" name="leadID" placeholder="ID">
+        <select id="movieID" class="form-control" name="movieID" placeholder="Select Movie" ></select>
+        <!--<input type="number" class="form-control" name="movieID" placeholder="ID">-->
     </div>
     <div class="form-group">
         <br><br>
-        <button class="btnDelete btn btn-primary" name="action" value="DeleteLead" onclick="deleteLead();">Delete Lead</button>
+        <button id="delete" class="btnDelete btn btn-primary" name="action" value="DeleteMovie">Delete Movie</button>
     </div>
     <div id="result"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
-    <script src="../js/leads.js"></script>
+    <script src="movie.js"></script>
+    <script>
+        var m = moviesModule();
+//        var d = directorsModule();
+        $( document ).ready(function() {
+            m.getMoviesIds(function(result){
+
+                var res = JSON.parse(result);
+                $.each( res, function() {
+                    $('#movieID').append($('<option>', {
+                        value: this.id,
+                        text: this.id
+                    }));
+                });
+            });
+
+            $('#delete').click(function(){
+                m.deleteMovie();
+            });
+
+        });
+
+
+        //        document.getElementsByTagName('button')[0].addEventListener('click', function() {
+        //            var res = m.getCustomer(document.getElementsByTagName('input')[0].value, function(res) {
+        //                res = JSON.parse(res);
+        //                console.log(res);
+        //                document.getElementsByTagName('div')[0].innerHTML =
+        //                        "<span>" + res.id + "</span><br><span>" + res.name + "</span>";
+        //            });
+        //        });
+        //
+        //        var m = customersModule();
+
+
+
+
+    </script>
 </body>
 </html>

@@ -25,6 +25,8 @@
          }
          function Delete($params) {
             // TODO
+             $c = new MovieController;
+             return $c->DeleteMovie($params);
          }
     }
 ?>

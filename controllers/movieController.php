@@ -16,7 +16,7 @@
         }
 
         function getAllMovies() {
-            
+            return json_encode(BL::getAllIds(MovieModel::tableName));
         }
 
         function getMovieById($id) {
@@ -30,5 +30,9 @@
             return $c->jsonSerialize();
         }
 
+        function DeleteMovie($request_vars) {
+            //  $d = new DirectorModel($request_vars["id"]);
+            return BL::deleteItem(MovieModel::tableName, $request_vars["id"]);
+        }
 
     }
