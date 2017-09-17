@@ -81,14 +81,14 @@ class BL {
 
     }
 
-    public static function deleteLead($table, $id){
+    public static function deleteItem($table, $id){
         $connection = DAL::getInstance();
         $db = $connection->getDB();
         $stmt = $db->prepare('DELETE FROM ' .  $table . ' WHERE id = :id');
 
         $stmt->execute(['id' => $id]);
-        $row = $stmt->fetch();
-        return $row;
+     //   $row = $stmt->fetch();
+        return 0;
     }
 
 }

@@ -38,14 +38,40 @@ var directorsModule = function() {
             });
         },
         deleteDirector: function() {
+
+
+
+        //     var data = {
+        //         name: $('#directorName').val(),
+        //         ctrl: directorApiMethod
+        //     }
+        //     jQuery.ajax({
+        //         url: '../../api/api.php' ,
+        //         data: data,
+        //         type: 'POST',
+        //         success: function(result) {
+        //             alert('Director was added successfully!');
+        //             //   callback(result);
+        //         }
+        //
+        //
+        //     });
+        // },
+
+
+
+
+        var data = {
+            id: $('#directorID').val(),
+            ctrl: directorApiMethod
+        };
+            // data.id = id;
             jQuery.ajax({
-                url: '/api/api.php' ,
-                data: {
-                    ctrl: directorApiMethod
-                },
+                url: '../../api/api.php' ,
+                data: data,
                 type: 'DELETE',
                 success: function(result) {
-                    console.log(result);
+                    alert('Director was deleted successfully!');
                 }
             });
         },

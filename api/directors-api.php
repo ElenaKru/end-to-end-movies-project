@@ -25,6 +25,8 @@ class DirectorApi extends Api{
     }
     function Delete($params) {
         // TODO
+        $c = new DirectorController;
+        return $c->DeleteDirector($params);
     }
 }
 ?>
