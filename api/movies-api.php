@@ -22,9 +22,11 @@
         }
          function Update($params) {
              // TODO
+             $c = new MovieController;
+             return $c->UpdateMovie($params);
          }
          function Delete($params) {
-            // TODO
+
              $c = new MovieController;
              return $c->DeleteMovie($params);
          }

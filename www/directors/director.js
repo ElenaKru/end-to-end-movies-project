@@ -75,7 +75,34 @@ var directorsModule = function() {
                 }
             });
         },
-        getDirectorsIds: function(callback) {
+
+
+        updateDirector: function (){
+
+        var data = {
+            id: $( "#directorID" ).val(),
+            name : $('#directorName').val(),
+            ctrl: directorApiMethod
+        };
+        $.ajax(
+            {
+                url: '../../api/api.php',
+                type: 'PUT',
+                data: data,
+                // dataType: "json",
+                success: function(result) {
+                    // if(result.status == 0){
+                        alert ('DIRECTOR WAS UPDATED SUCCESSFULLY');
+                    // } else {
+                    //     alert('ERROR');
+                    // }
+                }
+            });
+        },
+
+
+
+    getDirectorsIds: function(callback) {
             jQuery.ajax({
                 url: '../../api/api.php' ,
                 data: {
@@ -87,6 +114,7 @@ var directorsModule = function() {
                     callback(result);
                 }
             });
+
         }
     }
 }

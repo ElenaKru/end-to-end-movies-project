@@ -37,4 +37,8 @@ class DirectorController extends Controller {
         return BL::deleteItem(DirectorModel::tableName, $request_vars["id"]);
     }
 
+    function UpdateDirector($request_vars) {
+        $d = new DirectorModel($request_vars);
+        return BL::updateItemById(DirectorModel::tableName, $request_vars["id"], $d->jsonSerialize());
+    }
 }

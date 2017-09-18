@@ -65,6 +65,33 @@
                     //     }
                     //
                     // }
+
+
+                    updateMovie: function (){
+
+                        var data = {
+                            id: $( "#movieID" ).val(),
+                            name : $('#movieName').val(),
+                            d_id: $('#director').val(),
+                            ctrl: movieApiMethod
+                        };
+                        $.ajax(
+                            {
+                                url: '../../api/api.php',
+                                type: 'PUT',
+                                data: data,
+                                // dataType: "json",
+                                success: function(result) {
+                                    // if(result.status == 0){
+                                        alert ('MOVIE WAS UPDATED SUCCESSFULLY');
+                                    // } else {
+                                    //     alert('ERROR');
+                                    // }
+                                }
+                            });
+                    },
+
+
                     getMoviesIds: function (callback) {
                         jQuery.ajax({
                             url: '../../api/api.php',

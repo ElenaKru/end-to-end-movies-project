@@ -5,35 +5,88 @@
     <title>Update</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body onload="initForm()">
-    <h2> Update Lead </h2>
+<body>
+    <h2> Update Movie </h2>
 
     <div class="form-group">
         <label class="input-description">ID:</label>
-       <!-- <input type="number" class="form-control" name="leadID" placeholder="ID"> -->
-        <select id="leadID" class="form-control" name="leadID"  placeholder="Select Product" >
-
-        </select>
+       <!-- <input type="number" class="form-control" name="movieID" placeholder="ID"> -->
+        <select id="movieID" class="form-control" name="movieID"  placeholder="Select Product"></select>
     </div>
     <div class="form-group">
         <label class="input-description">NAME:</label>
-        <input type="text" class="form-control" id="leadName" name="leadName" placeholder="New Lead name">
+        <input type="text" class="form-control" id="movieName" name="movieName" placeholder="New Movie name">
     </div>
     <div class="form-group">
-        <label  class="input-description">PHONE:</label>
-        <input type="number" class="form-control" id="leadPhone" name="leadPhone" placeholder="New Lead phone">
+        <label  class="input-description">DIRECTOR:</label>
+        <select class="form-control" id="director" name="director" placeholder="Select Director" ></select>
     </div>
-    <div class="form-group">
-        <label  class="input-description">PRODUCT:</label>
-        <select class="form-control" id="productID" name="product"  placeholder="Select Product" ></select>
-    </div>
-    <input  type="hidden" name="action" value="CreateLead" >
     <div class="form-group">
         <br><br>
-        <button class="btnUpdate btn btn-primary" name="action" value="UpdateLead" onclick="updateLead();">Update Lead</button>
+        <button id="update" class="btnUpdate btn btn-primary" name="action" value="UpdateMovie">Update Movie</button>
     </div>
     <div id="result"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>
-    <script src="../js/leads.js"></script>
+    <script src="movie.js"></script>
+    <script src="../directors/director.js"></script>
+    <script>
+        var m = moviesModule();
+//        $( document ).ready(function() {
+//            m.getMoviesIds(function(result){
+//                var res = JSON.parse(result);
+//                $.each( res, function() {
+//                    $('#movieID').append($('<option>', {
+//                        value: this.id,
+//                        text: this.id
+//                    }));
+//                });
+//            });
+        var d = directorsModule();
+        $( document ).ready(function() {
+            d.getDirectorsIds(function(result){
+                var res = JSON.parse(result);
+                $.each( res, function() {
+                    $('#director').append($('<option>', {
+                        value: this.id,
+                        text: this.id
+                    }));
+                });
+//                $("#director").trigger("change");
+            });
+
+
+                m.getMoviesIds(function(result){
+                var res = JSON.parse(result);
+                $.each( res, function() {
+                    $('#movieID').append($('<option>', {
+                        value: this.id,
+                        text: this.id
+                    }));
+                });
+//                    $("#movieID").trigger("change");
+            });
+
+            $('#update').click(function(){
+                m.updateMovie();
+            });
+
+        });
+
+
+        //        document.getElementsByTagName('button')[0].addEventListener('click', function() {
+        //            var res = m.getCustomer(document.getElementsByTagName('input')[0].value, function(res) {
+        //                res = JSON.parse(res);
+        //                console.log(res);
+        //                document.getElementsByTagName('div')[0].innerHTML =
+        //                        "<span>" + res.id + "</span><br><span>" + res.name + "</span>";
+        //            });
+        //        });
+        //
+        //        var m = customersModule();
+
+
+
+
+    </script>
 </body>
 </html>

@@ -31,8 +31,13 @@
         }
 
         function DeleteMovie($request_vars) {
-            //  $d = new DirectorModel($request_vars["id"]);
+            //  $m = new MovieModel($request_vars["id"]);
             return BL::deleteItem(MovieModel::tableName, $request_vars["id"]);
+        }
+
+        function UpdateMovie($request_vars) {
+            $m = new MovieModel($request_vars);
+            return BL::updateItemById(MovieModel::tableName, $request_vars["id"], $m->jsonSerialize());
         }
 
     }

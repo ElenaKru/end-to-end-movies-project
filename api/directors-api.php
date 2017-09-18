@@ -22,9 +22,11 @@ class DirectorApi extends Api{
     }
     function Update($params) {
         // TODO
+        $c = new DirectorController;
+        return $c->UpdateDirector($params);
     }
     function Delete($params) {
-        // TODO
+
         $c = new DirectorController;
         return $c->DeleteDirector($params);
     }

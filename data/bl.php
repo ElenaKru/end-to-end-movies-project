@@ -25,6 +25,7 @@ class BL {
         $connection = DAL::getInstance();
         $db = $connection->getDB();
         $strUpdate = '';
+        unset($data['id']);
         foreach ($data as $key => $value){
             $strUpdate .= $key . ' = :' . $key . ',';
         }
@@ -33,6 +34,7 @@ class BL {
         $stmt = $db->prepare($query);
         $data['id'] = $id;
         $stmt->execute($data);
+//        $stmt->execute(['id' => $id]);
         return 0;
     }
     public static function getAll($table){
