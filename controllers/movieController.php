@@ -16,18 +16,21 @@
         }
 
         function getAllMovies() {
-            return json_encode(BL::getAllIds(MovieModel::tableName));
+            return json_encode(BL::getAll(MovieModel::tableName));
         }
 
-        function getMovieById($id) {
+        function getMovieById($params) {
             // CONNECT BL
-            $array = [
-                "id" => $id,
-                "name" => MD5($id)
-            ];
-           
-            $c = new MovieModel($array);
-            return $c->jsonSerialize();
+//            $array = [
+//                "id" => $id,
+//                "name" => MD5($id)
+//            ];
+//
+//            $m = new MovieModel($array);
+//            return $m->jsonSerialize();
+
+            //        $m = new MovieModel($params);
+            return BL::getOneById(MovieModel::tableName, $params);
         }
 
         function DeleteMovie($request_vars) {

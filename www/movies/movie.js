@@ -25,7 +25,7 @@
                             data.id = id;
 
                         jQuery.ajax({
-                            url: '../api/api.php',
+                            url: '../../api/api.php',
                             data: data,
                             type: 'GET',
                             success: function (result) {

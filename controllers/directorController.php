@@ -16,19 +16,23 @@ class DirectorController extends Controller {
 
     }
 
-    function getAllDirectors() {
-        return json_encode(BL::getAllIds(DirectorModel::tableName));
+    function getAllDirectors($params) {
+        return json_encode(BL::getAll(DirectorModel::tableName));
     }
 
-    function getDirectorById($id) {
+    function getDirectorById($params) {
         // CONNECT BL
-        $array = [
-            "id" => $id,
-            "name" => MD5($id)
-        ];
+//        $array = [
+//            "id" => $id,
+//            "name" => MD5($id)
+//        ];
+//
+//        $d = new DirectorModel($array);
+//        return $d->jsonSerialize();
 
-        $c = new DirectorModel($array);
-        return $c->jsonSerialize();
+//        $d = new DirectorModel($params);
+        return BL::getOneById(DirectorModel::tableName, $params);
+
     }
 
 

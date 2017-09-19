@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <input>
-        <button>Get customer</button>
-        <div>
-        </div>
-        <script src=customer.js></script>
-        <script>
-            document.getElementsByTagName('button')[0].addEventListener('click', function() {
-                var res = m.getCustomer(document.getElementsByTagName('input')[0].value, function(res) {
-                    res = JSON.parse(res);
-                    console.log(res);
-                    document.getElementsByTagName('div')[0].innerHTML = 
-                       "<span>" + res.id + "</span><br><span>" + res.name + "</span>";
-                });
-            });
-            
-            var m = customersModule();
+<head>
+    <title>task</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+</head>
+<body>
 
-           
+    <h2> MOVIES </h2>
+    <a class="btn" href="movies/select.html"><button class="btn btn-primary">Select</button></a>
+    <a class="btn" href="movies/update.html"><button class="btn btn-primary">Update</button></a>
+    <a class="btn" href="movies/delete.html"><button class="btn btn-primary">Delete</button></a>
+    <a class="btn" href="movies/create.html"><button class="btn btn-primary">Create</button></a>
 
-           
-        </script>
-    </body>
+    <h2> DIRECTORS </h2>
+    <a class="btn" href="directors/select.html"><button class="btn btn-primary">Select</button></a>
+    <a class="btn" href="directors/update.html"><button class="btn btn-primary">Update</button></a>
+    <a class="btn" href="directors/delete.html"><button class="btn btn-primary">Delete</button></a>
+    <a class="btn" href="directors/create.html"><button class="btn btn-primary">Create</button></a>
+
+
+    <script src="movies/movie.js"></script>
+    <script src="directors/director.js"></script>
+
+</body>
 </html>

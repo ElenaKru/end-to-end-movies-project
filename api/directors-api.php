@@ -5,30 +5,30 @@ require_once '../controllers/directorController.php';
 class DirectorApi extends Api{
 
     function Create($params) {
-        $c = new DirectorController;
-        return $c->CreateDirector($params);
+        $d = new DirectorController;
+        return $d->CreateDirector($params);
     }
 
     function Read($params) {
-        $c = new DirectorController;
+        $d = new DirectorController;
 
         if (array_key_exists("id", $params)) {
-            $customer = $c->getDirectorById($params["id"]);
-            return json_encode($customer, JSON_PRETTY_PRINT);
+            $director = $d->getDirectorById($params["id"]);
+            return json_encode($director, JSON_PRETTY_PRINT);
         }
         else {
-            return $c->getAllDirectors();
+            return $d->getAllDirectors($params);
         }
     }
     function Update($params) {
-        // TODO
-        $c = new DirectorController;
-        return $c->UpdateDirector($params);
+
+        $d = new DirectorController;
+        return $d->UpdateDirector($params);
     }
     function Delete($params) {
 
-        $c = new DirectorController;
-        return $c->DeleteDirector($params);
+        $d = new DirectorController;
+        return $d->DeleteDirector($params);
     }
 }
 ?>
