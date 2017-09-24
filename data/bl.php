@@ -34,7 +34,7 @@ class BL {
         $stmt = $db->prepare($query);
         $data['id'] = $id;
         $stmt->execute($data);
-//        $stmt->execute(['id' => $id]);
+
         return 0;
     }
     public static function getAll($table){

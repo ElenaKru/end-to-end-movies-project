@@ -13,11 +13,15 @@
             $m = new MovieController;
 
             if (array_key_exists("id", $params)) {
+
                 $movie = $m->getMovieById($params["id"]);
+
                 return json_encode($movie, JSON_PRETTY_PRINT);
             }
             else {
+
                 return $m->getAllMovies($params);
+
             }
         }
          function Update($params) {

@@ -39,28 +39,6 @@ var directorsModule = function() {
         },
         deleteDirector: function() {
 
-
-
-        //     var data = {
-        //         name: $('#directorName').val(),
-        //         ctrl: directorApiMethod
-        //     }
-        //     jQuery.ajax({
-        //         url: '../../api/api.php' ,
-        //         data: data,
-        //         type: 'POST',
-        //         success: function(result) {
-        //             alert('Director was added successfully!');
-        //             //   callback(result);
-        //         }
-        //
-        //
-        //     });
-        // },
-
-
-
-
         var data = {
             id: $('#directorID').val(),
             ctrl: directorApiMethod
@@ -75,8 +53,6 @@ var directorsModule = function() {
                 }
             });
         },
-
-
         updateDirector: function (){
 
         var data = {
@@ -99,8 +75,6 @@ var directorsModule = function() {
                 }
             });
         },
-
-
 
     getDirectorsIds: function(callback) {
             jQuery.ajax({

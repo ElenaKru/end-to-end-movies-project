@@ -11,7 +11,6 @@
 
     <div class="form-group">
         <label class="input-description">ID:</label>
-       <!-- <input type="number" class="form-control" name="directorID" placeholder="ID"> -->
         <select id="directorID" class="form-control" name="directorID"  placeholder="Select Product" >
 
         </select>
@@ -25,7 +24,7 @@
         <button id="update" class="btnUpdate btn btn-primary" name="action" value="UpdateDirector">Update Director</button>
     </div>
     <div id="result"></div>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>-->
+
     <script src="director.js"></script>
     <script>
         //        var m = moviesModule();
@@ -39,6 +38,7 @@
                         text: this.id
                     }));
                 });
+                $("#directorID").trigger("change");
             });
 
             $('#update').click(function(){
@@ -46,20 +46,21 @@
             });
         });
 
+        $( "#directorID" ).change(function(e) {
+            var optionSelected = $("option:selected", this);
+            var valueSelected = this.value;
 
-        //        document.getElementsByTagName('button')[0].addEventListener('click', function() {
-        //            var res = m.getCustomer(document.getElementsByTagName('input')[0].value, function(res) {
-        //                res = JSON.parse(res);
-        //                console.log(res);
-        //                document.getElementsByTagName('div')[0].innerHTML =
-        //                        "<span>" + res.id + "</span><br><span>" + res.name + "</span>";
-        //            });
-        //        });
-        //
-        //        var m = customersModule();
+            d.getDirector(valueSelected, fillForm);
 
+        });
 
+        function fillForm(data){
+            data = JSON.parse(data);
+//            alert(111);
+//            console.log(data.name);
+            $('#directorName').val(data.name);
 
+        }
 
     </script>
 </body>

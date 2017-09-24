@@ -40,7 +40,7 @@
                             id: $('#movieID').val(),
                             ctrl: movieApiMethod
                         };
-                        // data.id = id;
+
                         jQuery.ajax({
                             url: '../../api/api.php',
                             data: data,
@@ -50,23 +50,6 @@
                             }
                         });
                     },
-
-
-                    //         jQuery.ajax({
-                    //             url: '/api/api.php' ,
-                    //             data: {
-                    //                 ctrl: movieApiMethod
-                    //             },
-                    //             type: 'DELETE',
-                    //             success: function(result) {
-                    //                 console.log(result);
-                    //             }
-                    //         });
-                    //     }
-                    //
-                    // }
-
-
                     updateMovie: function (){
 
                         var data = {
@@ -91,7 +74,6 @@
                             });
                     },
 
-
                     getMoviesIds: function (callback) {
                         jQuery.ajax({
                             url: '../../api/api.php',
@@ -100,7 +82,7 @@
                             },
                             type: 'GET',
                             success: function (result) {
-                                // alert('succ')
+
                                 callback(result);
                             }
                         });

@@ -6,31 +6,32 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 <body>
-<!--<body onload="getLeads()">-->
+
     <h2> Select Movie </h2>
 
     <label class="input-description">MOVIE:</label>
     <input type="text" class="form-control" name="movieID" placeholder="Movie ID">
     <button class="btnUpdate btn btn-primary" name="action" value="GetMovie">Get movie</button>
-    <div>
+    <div id="result">
     </div>
-    <!--<div id="result"></div>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>-->
+
     <script src="movie.js"></script>
     <script>
         document.getElementsByTagName('button')[0].addEventListener('click', function() {
-            var res = m.getMovie(document.getElementsByTagName('input')[0].value, function(res) {
+            var res = m.getMovie(document.getElementsByTagName('input')[0].value, function (res) {
                 res = JSON.parse(res);
                 console.log(res);
-                document.getElementsByTagName('div')[0].innerHTML =
-                    "<span>" + "ID: " + res.id + "</span><br><span>" + "NAME: " + res.name + "</span><br><span>" + "DIRECTOR: " + res.d_id + "</span>";
+                if (res.id) {
+                    document.getElementsByTagName('div')[0].innerHTML =
+                        "<span>" + "ID: " + res.id + "</span><br><span>" + "NAME: " + res.name + "</span><br><span>" + "DIRECTOR: " + res.d_id + "</span>";
+                } else {
+                    $.each(res, function () {
+                        $('#result').append('ID: ' + this.id + ' NAME: ' + this.name + ' DIRECTOR: ' + this.d_id + '<br/>');
+                    });
+                }
             });
         });
-
         var m = moviesModule();
-
-
-
 
     </script>
 </body>

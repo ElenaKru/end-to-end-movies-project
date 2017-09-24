@@ -12,14 +12,14 @@
     <div class="form-group">
         <label class="input-description">ID:</label>
         <select id="directorID" class="form-control" name="directorID" placeholder="Select Director" ></select>
-        <!--<input type="number" class="form-control" name="directorID" id="directorID" placeholder="ID">-->
+
     </div>
     <div class="form-group">
         <br><br>
         <button id="delete" class="btnDelete btn btn-primary" name="action">Delete Director</button>
     </div>
     <div id="result"></div>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" ></script>-->
+
     <script src="director.js"></script>
     <script>
         //        var m = moviesModule();
@@ -37,23 +37,8 @@
 
         $('#delete').click(function(){
             d.deleteDirector();
-        });
+            });
                 });
-
-
-        //        document.getElementsByTagName('button')[0].addEventListener('click', function() {
-        //            var res = m.getCustomer(document.getElementsByTagName('input')[0].value, function(res) {
-        //                res = JSON.parse(res);
-        //                console.log(res);
-        //                document.getElementsByTagName('div')[0].innerHTML =
-        //                        "<span>" + res.id + "</span><br><span>" + res.name + "</span>";
-        //            });
-        //        });
-        //
-        //        var m = customersModule();
-
-
-
 
     </script>
 </body>
