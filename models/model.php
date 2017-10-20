@@ -2,3 +2,4 @@
     class Model {
         private $tableName;
     }
+?>

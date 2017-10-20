@@ -46,3 +46,4 @@ class DirectorController extends Controller {
         return BL::updateItemById(DirectorModel::tableName, $request_vars["id"], $d->jsonSerialize());
     }
 }
+?>
